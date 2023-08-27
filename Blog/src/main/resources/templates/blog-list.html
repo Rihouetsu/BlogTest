@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/blog-list.css}">
+</head>
+
+<body>
+	<header class="headerArea">
+		<div>
+			<h1>Welcome to My Blog</h1>
+		</div>
+		<div class="headerlogin">
+			<a th:href="@{/login}">ログイン</a>
+			<a th:href="@{/logout}">ログアウト</a>
+		</div>
+	</header>
+	<nav>
+		<a href="#">Home</a>
+		<a th:href="@{/blog/newblog}">New</a>
+		<a href="#">Blog</a>
+		<a href="#">Contact</a>
+	</nav>
+	<main>
+		<div th:if="!${#lists.isEmpty(blogList)}">
+
+			<div class="blog-list">
+				<div class="blogcard" th:each="blog,blogStat:${blogList}">
+					<form th:action="@{/blog/edit/{blogId}(blogId=${blog.blogId})}" method="get">
+						<div><img style="width:200px;height: 200px;" th:src="@{/blog-img/{items}(items=${blog.blogImage})}"></div>
+						<div><input type="submit" th:value="${blog.blogTitle}" th:id="submit-button" /></div>
+						<div hidden>
+							<input type="text" th:value="${blog.blogId}" name="blogId" />
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		<div class="blogcard">
+			<a th:href="@{/blog/newblog}">+</a>
+		</div>
+	</main>
+</body>
+<!--
+        <ul>
+            <li class="blog-topic-article">
+                <a href="" class="blog-colum">
+                    <div class="blog-colum-category">
+                        <p>仕事</p>
+                    </div>
+                    <img th:src="@{/img/java.png}" alt="">
+                    <div class="colum__box">
+                        
+                    </div>
+                </a>
+            </li>
+             <li class="blog-topic-article">
+                <a href="" class="blog-colum">
+                    <div class="blog-colum-category">
+                        <p>生活</p>
+                    </div>
+                    <img th:src="@{/img/kyoto.png}" alt="">
+                    <div class="colum__box">
+                       
+                    </div>
+                </a> 
+             </li>          
+            <li class="blog-topic-article">
+                <a href="" class="blog-colum">
+                    <div class="blog-colum-category">
+                        <p>予定</p>
+                    </div>
+                    <img th:src="@{/img/onsen.png}" alt="">
+                    <div class="colum__box">
+                        
+                    </div>
+                </a>
+            </li>
+           
+        </ul>
+        -->
+
+</html>

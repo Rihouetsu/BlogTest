@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/blog-edit.css}">
+</head>
+    <body>
+    <header>
+        <h1>Welcome to my blog</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <h3>Record Life</h3>
+        <form th:action="@{/blog/edit/process}" method="post" enctype="multipart/form-data">
+		
+            <label for="title">Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle"  th:value="${blogList.blogTitle}" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="category">Category:</label>
+            <input type="text" name="categoryName" th:value="${blogList.categoryName}" required>
+
+            <!--<label for="image">image:</label>
+               <img th:src="@{/}" alt="">-->
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="blogImage">
+
+            <label for="detail">Detail:</label>
+            <textarea id="article" name="article" rows="4" th:field="${blogList.article}" required></textarea>
+            <input type="hidden" name="blogId" th:value="${blogList.blogId}" required>
+            <div><button type="submit">変更</button></div>
+        </form>
+        <span>
+	        <div class="flex">
+	            
+	            <button type="button" onclick="history.back();">戻る</button>
+	            <form th:action="@{/blog/delete}" method="post">
+	                <div class="flex">
+						<input type="hidden" name="blogId" th:value="${blogList.blogId}" required>
+	                    <button type="submit">削除</button>
+	                </div>
+	            </form>
+	        </div>
+        </span>
+    
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

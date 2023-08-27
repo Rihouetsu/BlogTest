@@ -1,0 +1,40 @@
+div{
+    background-image: url('../images/krystal-ng-PrQqQVPzmlw-unsplash.jpg');
+    background-size: 100% 100%;     
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .login-container { 
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    background-color:chocolate;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;  
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+  }

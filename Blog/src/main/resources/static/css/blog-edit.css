@@ -1,0 +1,79 @@
+body {   
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+
+header {
+    background-color:lightblue;
+    color:chocolate;
+    text-align: center;
+    padding: 4px;
+}
+
+nav {
+    background-color:lightpink;
+    color:wheat;
+    text-align: center;
+    padding: 2px;
+}
+
+nav a {
+    color:blueviolet;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2px;
+    background-color:bisque;
+    border-radius: 8px;  
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+input[type="text"],
+input[type="title"],
+input[type="date"],
+input[type="category"],
+textarea {
+    width: 90%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.3px;
+}
+
+button[type="submit"] {
+    border-radius: 4px;
+    padding: 0.5px 1px;
+    font-size: 14px;
+    text-align: center;
+    background-color:cornsilk;
+}
+button[type="button"] {
+    border-radius: 4px;
+    padding: 0.5px 1px;
+    font-size: 14px;
+    text-align: center;
+    background-color:cornsilk;
+}
+
+.flex{
+    display:flex;
+    justify-content: center;
+    gap: 0 20px;
+    align-items: center;
+}
